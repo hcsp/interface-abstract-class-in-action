@@ -41,7 +41,7 @@ public class World {
 
     }
 
-    static class 蝴蝶 implements 会飞的东西,会叫的东西,动物{
+    static class 蝴蝶 implements 会飞的东西,动物{
         public void 飞() {
             System.out.println("蝴蝶飞");
         }
