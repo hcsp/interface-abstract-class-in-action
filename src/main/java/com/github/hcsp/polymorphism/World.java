@@ -51,64 +51,44 @@ public class World {
         void 叫();
     }
 
-    static class flyAnimal implements 会飞的东西,动物{
-
+    static public class Animal implements 动物{
         @Override
         public void 新陈代谢() {
-
+            System.out.println("新陈代谢");
         }
+    }
 
+    static class FlyAnimal extends Animal implements 会飞的东西{
         @Override
         public void 飞() {
 
         }
     }
 
-    static class mammal implements 会叫的东西,动物{
-
+    static class Bird extends FlyAnimal implements 会叫的东西{
         @Override
-        public void 新陈代谢() {
-
-        }
-
-        @Override
-        public void 叫() {
-
-        }
-    }
-
-    static class 麻雀 extends flyAnimal implements 会叫的东西{
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
-
         public void 飞() {
             System.out.println("鸟儿飞");
         }
 
+        @Override
         public void 叫() {
             System.out.println("叽叽喳喳");
         }
     }
 
-    static class 喜鹊 extends flyAnimal implements 会叫的东西{
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
-
-        public void 飞() {
-            System.out.println("鸟儿飞");
-        }
-
+    static class Mammal extends Animal implements 会叫的东西{
+        @Override
         public void 叫() {
-            System.out.println("叽叽喳喳");
+
         }
     }
 
-    static class 蝴蝶 extends flyAnimal{
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
+    static class 麻雀 extends Bird{ }
+
+    static class 喜鹊 extends Bird{ }
+
+    static class 蝴蝶 extends FlyAnimal{
 
         public void 飞() {
             System.out.println("蝴蝶飞");
@@ -127,21 +107,13 @@ public class World {
         }
     }
 
-    static class 猫 extends mammal{
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
-
+    static class 猫 extends Mammal{
         public void 叫() {
             System.out.println("喵喵喵");
         }
     }
 
-    static class 狗 extends mammal{
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
-
+    static class 狗 extends Mammal{
         public void 叫() {
             System.out.println("汪汪汪");
         }
