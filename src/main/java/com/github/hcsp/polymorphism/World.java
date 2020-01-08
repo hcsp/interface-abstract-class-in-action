@@ -41,24 +41,22 @@ public class World {
     // 在建造成类型体系后，请尝试化简这个啰嗦的方法，体会多态带来的好处
     public static void 动物都能新陈代谢() {
         for (Object obj : objects) {
-            if (obj instanceof 麻雀) {
-                ((麻雀) obj).新陈代谢();
-            } else if (obj instanceof 喜鹊) {
-                ((喜鹊) obj).新陈代谢();
-            } else if (obj instanceof 蝴蝶) {
-                ((蝴蝶) obj).新陈代谢();
-            } else if (obj instanceof 猫) {
-                ((猫) obj).新陈代谢();
-            } else if (obj instanceof 狗) {
-                ((狗) obj).新陈代谢();
+            if (obj instanceof 活的动物) {
+                ((活的动物) obj).新陈代谢();
             }
+//            else if (obj instanceof 喜鹊) {
+//                ((喜鹊) obj).新陈代谢();
+//            } else if (obj instanceof 蝴蝶) {
+//                ((蝴蝶) obj).新陈代谢();
+//            } else if (obj instanceof 猫) {
+//                ((猫) obj).新陈代谢();
+//            } else if (obj instanceof 狗) {
+//                ((狗) obj).新陈代谢();
+//            }
         }
     }
 
-    static class 麻雀 {
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
+    static class 麻雀 extends 活的动物 {
 
         public void 飞() {
             System.out.println("鸟儿飞");
@@ -69,10 +67,7 @@ public class World {
         }
     }
 
-    static class 喜鹊 {
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
+    static class 喜鹊 extends 活的动物 {
 
         public void 飞() {
             System.out.println("鸟儿飞");
@@ -83,10 +78,7 @@ public class World {
         }
     }
 
-    static class 蝴蝶 {
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
+    static class 蝴蝶 extends 活的动物 {
 
         public void 飞() {
             System.out.println("蝴蝶飞");
@@ -105,20 +97,14 @@ public class World {
         }
     }
 
-    static class 猫 {
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
+    static class 猫 extends 活的动物 {
 
         public void 叫() {
             System.out.println("喵喵喵");
         }
     }
 
-    static class 狗 {
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
+    static class 狗 extends 活的动物{
 
         public void 叫() {
             System.out.println("汪汪汪");
@@ -135,5 +121,12 @@ public class World {
 
     interface 会叫的东西 {
         void 叫();
+    }
+
+    static abstract class 活的动物 implements 动物{
+        @Override
+        public void 新陈代谢() {
+            System.out.println("新陈代谢");
+        }
     }
 }
