@@ -1,7 +1,5 @@
 package com.github.hcsp.polymorphism;
 
-import com.github.hcsp.polymorphism.World.会飞的东西;
-
 import java.util.Arrays;
 import java.util.List;
 
