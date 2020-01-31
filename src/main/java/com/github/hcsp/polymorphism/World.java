@@ -37,7 +37,7 @@ public class World {
     }
 
     interface 动物 {
-        void 新陈代谢()
+        void 新陈代谢();
     }
 
     interface 会飞的东西 {
