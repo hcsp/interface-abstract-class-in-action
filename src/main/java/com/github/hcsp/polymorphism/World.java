@@ -1,7 +1,5 @@
 package com.github.hcsp.polymorphism;
 
-import com.github.hcsp.polymorphism.World.会飞的东西;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -69,11 +67,11 @@ public class World {
         }
     }
 
-    static class 麻雀 extends 鸟 {
+    static class 麻雀 extends 鸟  {
 
     }
 
-    static class 喜鹊 extends 鸟 {
+    static class 喜鹊 extends 鸟  {
 
     }
 
