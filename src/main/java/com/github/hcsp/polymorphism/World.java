@@ -51,6 +51,7 @@ public class World {
     static class 活的动物 implements 动物 {
 
         public void 新陈代谢() {
+
             System.out.println("新陈代谢");
         }
     }
@@ -67,7 +68,7 @@ public class World {
         }
     }
 
-    static class 麻雀 extends 鸟  {
+       static class 麻雀 extends 鸟  {
 
     }
 
@@ -85,6 +86,7 @@ public class World {
     static class 飞机 implements 会飞的东西 {
 
         public void 飞() {
+
             System.out.println("飞机飞");
         }
     }
@@ -92,6 +94,7 @@ public class World {
     static class 救护车 implements 会叫的东西 {
 
         public void 叫() {
+
             System.out.println("哇呜哇呜");
         }
     }
