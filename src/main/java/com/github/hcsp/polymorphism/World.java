@@ -1,5 +1,7 @@
 package com.github.hcsp.polymorphism;
 
+import com.github.hcsp.polymorphism.World.会飞的东西;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -37,9 +39,7 @@ public class World {
     }
 
     interface 动物 {
-        void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
+        void 新陈代谢()
     }
 
     interface 会飞的东西 {
@@ -49,6 +49,7 @@ public class World {
     interface 会叫的东西 {
         void 叫();
     }
+
     static class 活的动物 implements 动物 {
 
         public void 新陈代谢() {
@@ -68,11 +69,11 @@ public class World {
         }
     }
 
-    static class 麻雀 extends 鸟  {
+    static class 麻雀 extends 鸟 {
 
     }
 
-    static class 喜鹊 extends 鸟  {
+    static class 喜鹊 extends 鸟 {
 
     }
 
@@ -112,4 +113,4 @@ public class World {
     }
 
 
-        }
+}
