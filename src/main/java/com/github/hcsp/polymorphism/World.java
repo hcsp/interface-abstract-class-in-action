@@ -19,8 +19,8 @@ public class World {
     // 在建造成类型体系后，请尝试化简这个啰嗦的方法，体会多态带来的好处
     public static void 会叫的东西叫() {
         for (Object obj : objects) {
-            if (obj instanceof 麻雀) {
-                ((麻雀) obj).叫();
+            if (obj instanceof 会叫的东西) {
+                ((会叫的东西) obj).叫();
             }
         }
     }
