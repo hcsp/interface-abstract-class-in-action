@@ -9,6 +9,7 @@ public class World {
     public static List<Object> objects =
             Arrays.asList(new 麻雀(), new 喜鹊(), new 蝴蝶(), new 飞机(), new 救护车(), new 猫(), new 狗());
 
+
     // 在建造成类型体系后，请尝试化简这个啰嗦的方法，体会多态带来的好处
     public static void 会飞的东西飞() {
         for (Object obj : objects) {
@@ -30,24 +31,29 @@ public class World {
     // 在建造成类型体系后，请尝试化简这个啰嗦的方法，体会多态带来的好处
     public static void 动物都能新陈代谢() {
         for (Object obj : objects) {
-            if (obj instanceof 动物) {
-                ((动物) obj).新陈代谢();
+            if (obj instanceof 活的动物) {
+                ((活的动物) obj).新陈代谢();
             }
         }
     }
 
-    static class 麻雀 extends 鸟 {
 
+    static class 鸟 extends 活的动物 implements 会飞的东西, 会叫的东西 {
+        @Override
         public void 飞() {
-            System.out.println("麻雀飞");
+            System.out.println("鸟儿飞");
         }
 
+        @Override
+        public void 叫() {
+            System.out.println("叽叽喳喳");
+        }
+    }
+
+    static class 麻雀 extends 鸟 {
     }
 
     static class 喜鹊 extends 鸟 {
-        public void 飞() {
-            System.out.println("喜鹊飞");
-        }
     }
 
     static class 蝴蝶 extends 活的动物 implements 会飞的东西 {
@@ -82,7 +88,11 @@ public class World {
         }
     }
 
-
+    static class 活的动物 implements 动物 {
+        public void 新陈代谢() {
+            System.out.println("新陈代谢");
+        }
+    }
     interface 动物 {
         void 新陈代谢();
     }
@@ -93,25 +103,6 @@ public class World {
 
     interface 会叫的东西 {
         void 叫();
-    }
-
-    static class 活的动物 implements 动物 {
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
-
-    }
-
-    static class 鸟 extends 活的动物 implements 会飞的东西, 会叫的东西 {
-
-        public void 飞() {
-            System.out.println("鸟儿飞");
-        }
-
-        @Override
-        public void 叫() {
-            System.out.println("叽叽喳喳");
-        }
     }
 
 }
