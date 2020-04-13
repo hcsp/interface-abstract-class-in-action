@@ -37,24 +37,10 @@ public class World {
     }
 
 
-    static class 麻雀 extends abstract动物 implements 会飞的东西, 会叫的东西 {
-        public void 飞() {
-            System.out.println("鸟儿飞");
-        }
-
-        public void 叫() {
-            System.out.println("叽叽喳喳");
-        }
+    static class 麻雀 extends abstract鸟类 {
     }
 
-    static class 喜鹊 extends abstract动物 implements 会飞的东西, 会叫的东西 {
-        public void 飞() {
-            System.out.println("鸟儿飞");
-        }
-
-        public void 叫() {
-            System.out.println("叽叽喳喳");
-        }
+    static class 喜鹊 extends abstract鸟类 {
     }
 
     static class 蝴蝶 extends abstract动物 implements 会飞的东西 {
@@ -90,6 +76,16 @@ public class World {
     static class abstract动物 {
         void 新陈代谢() {
             System.out.println("新陈代谢");
+        }
+    }
+
+    static class abstract鸟类 extends abstract动物 {
+        void 叫() {
+            System.out.println("叽叽喳喳");
+        }
+
+        void 飞() {
+            System.out.println("鸟儿飞");
         }
     }
 
