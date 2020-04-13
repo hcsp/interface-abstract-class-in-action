@@ -30,20 +30,20 @@ public class World {
     // 在建造成类型体系后，请尝试化简这个啰嗦的方法，体会多态带来的好处
     public static void 动物都能新陈代谢() {
         for (Object obj : objects) {
-            if (obj instanceof abstract动物) {
-                ((abstract动物) obj).新陈代谢();
+            if (obj instanceof 动物) {
+                ((动物) obj).新陈代谢();
             }
         }
     }
 
 
-    static class 麻雀 extends abstract鸟类 {
+    static class 麻雀 extends 鸟类 {
     }
 
-    static class 喜鹊 extends abstract鸟类 {
+    static class 喜鹊 extends 鸟类 {
     }
 
-    static class 蝴蝶 extends abstract动物 implements 会飞的东西 {
+    static class 蝴蝶 extends 动物 implements 会飞的东西 {
         public void 飞() {
             System.out.println("蝴蝶飞");
         }
@@ -61,25 +61,25 @@ public class World {
         }
     }
 
-    static class 猫 extends abstract动物 implements 会叫的东西 {
+    static class 猫 extends 动物 implements 会叫的东西 {
         public void 叫() {
             System.out.println("喵喵喵");
         }
     }
 
-    static class 狗 extends abstract动物 implements 会叫的东西 {
+    static class 狗 extends 动物 implements 会叫的东西 {
         public void 叫() {
             System.out.println("汪汪汪");
         }
     }
 
-    static class abstract动物 {
+    static class 动物 {
         void 新陈代谢() {
             System.out.println("新陈代谢");
         }
     }
 
-    static class abstract鸟类 extends abstract动物 {
+    static class 鸟类 extends 动物 {
         void 叫() {
             System.out.println("叽叽喳喳");
         }
