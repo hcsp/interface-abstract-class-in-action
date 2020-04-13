@@ -79,12 +79,12 @@ public class World {
         }
     }
 
-    static class 鸟类 extends 动物 {
-        void 叫() {
+    static class 鸟类 extends 动物 implements 会飞的东西, 会叫的东西 {
+        public void 叫() {
             System.out.println("叽叽喳喳");
         }
 
-        void 飞() {
+        public void 飞() {
             System.out.println("鸟儿飞");
         }
     }
