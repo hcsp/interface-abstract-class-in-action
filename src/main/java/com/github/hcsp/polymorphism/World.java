@@ -36,14 +36,14 @@ public class World {
         }
     }
 
-    static class metabolizableAnimal implements 动物 {
+    static class MetabolizableAnimal implements 动物 {
         @Override
         public void 新陈代谢() {
             System.out.println("新陈代谢");
         }
     }
 
-    static class bird extends metabolizableAnimal implements 会飞的东西, 会叫的东西 {
+    static class Bird extends MetabolizableAnimal implements 会飞的东西, 会叫的东西 {
         @Override
         public void 飞() {
             System.out.println("鸟儿飞");
@@ -54,13 +54,13 @@ public class World {
         }
     }
 
-    static class 麻雀 extends bird {
+    static class 麻雀 extends Bird {
     }
 
-    static class 喜鹊 extends bird {
+    static class 喜鹊 extends Bird {
     }
 
-    static class 蝴蝶 extends metabolizableAnimal implements 会飞的东西 {
+    static class 蝴蝶 extends MetabolizableAnimal implements 会飞的东西 {
         @Override
         public void 飞() {
             System.out.println("蝴蝶飞");
@@ -81,14 +81,14 @@ public class World {
         }
     }
 
-    static class 猫 extends metabolizableAnimal implements 会叫的东西 {
+    static class 猫 extends MetabolizableAnimal implements 会叫的东西 {
         @Override
         public void 叫() {
             System.out.println("喵喵喵");
         }
     }
 
-    static class 狗 extends metabolizableAnimal implements 会叫的东西 {
+    static class 狗 extends MetabolizableAnimal implements 会叫的东西 {
         @Override
         public void 叫() {
             System.out.println("汪汪汪");
