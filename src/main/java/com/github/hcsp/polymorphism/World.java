@@ -33,7 +33,7 @@ public class World {
         }
     }
 
-    static class 鸟 extends 动物 implements 会飞的东西, 会叫的东西{
+    static class 鸟 extends 动物 implements 会飞的东西, 会叫的东西 {
         @Override
         public void 飞() {
             System.out.println("鸟儿飞");
@@ -50,31 +50,31 @@ public class World {
     static class 喜鹊 extends 鸟{
     }
 
-    static class 蝴蝶 extends 动物 implements 会飞的东西{
+    static class 蝴蝶 extends 动物 implements 会飞的东西 {
         public void 飞() {
             System.out.println("蝴蝶飞");
         }
     }
 
-    static class 飞机 implements 会飞的东西{
+    static class 飞机 implements 会飞的东西 {
         public void 飞() {
             System.out.println("飞机飞");
         }
     }
 
-    static class 救护车 implements 会叫的东西{
+    static class 救护车 implements 会叫的东西 {
         public void 叫() {
             System.out.println("哇呜哇呜");
         }
     }
 
-    static class 猫 extends 动物 implements 会叫的东西{
+    static class 猫 extends 动物 implements 会叫的东西 {
         public void 叫() {
             System.out.println("喵喵喵");
         }
     }
 
-    static class 狗 extends 动物 implements 会叫的东西{
+    static class 狗 extends 动物 implements 会叫的东西 {
         public void 叫() {
             System.out.println("汪汪汪");
         }
