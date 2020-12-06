@@ -36,44 +36,13 @@ public class World {
         }
     }
 
-    static class 麻雀 implements 动物, 会飞的东西, 会叫的东西 {
-        @Override
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
-
-        public void 飞() {
-            System.out.println("鸟儿飞");
-        }
-
-        public void 叫() {
-            System.out.println("叽叽喳喳");
-        }
+    static class 麻雀 extends Bird implements 会飞的东西, 会叫的东西 {
     }
 
-    static class 喜鹊 implements 动物, 会飞的东西, 会叫的东西 {
-        @Override
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
-
-        @Override
-        public void 飞() {
-            System.out.println("鸟儿飞");
-        }
-
-        @Override
-        public void 叫() {
-            System.out.println("叽叽喳喳");
-        }
+    static class 喜鹊 extends Bird implements 动物, 会飞的东西, 会叫的东西 {
     }
 
-    static class 蝴蝶 implements 动物, 会飞的东西 {
-        @Override
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
-
+    static class 蝴蝶 extends Animal implements 会飞的东西 {
         @Override
         public void 飞() {
             System.out.println("蝴蝶飞");
@@ -95,30 +64,21 @@ public class World {
         }
     }
 
-    static class 猫 implements 动物, 会叫的东西 {
-        @Override
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
-
+    static class 猫 extends Animal implements 会叫的东西 {
         @Override
         public void 叫() {
             System.out.println("喵喵喵");
         }
     }
 
-    static class 狗 implements 动物, 会叫的东西 {
-        @Override
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
-
+    static class 狗 extends Animal implements 会叫的东西 {
         @Override
         public void 叫() {
             System.out.println("汪汪汪");
         }
     }
 
+    //接口
     interface 动物 {
         void 新陈代谢();
     }
@@ -129,5 +89,24 @@ public class World {
 
     interface 会叫的东西 {
         void 叫();
+    }
+
+    //创建一个动物类
+    static class Animal implements 动物 {
+        @Override
+        public void 新陈代谢() {
+            System.out.println("新陈代谢");
+        }
+    }
+
+    //创建一个鸟类
+    static class Bird extends Animal {
+        public void 飞() {
+            System.out.println("鸟儿飞");
+        }
+
+        public void 叫() {
+            System.out.println("叽叽喳喳");
+        }
     }
 }
