@@ -9,6 +9,11 @@ public class World {
     public static List<Object> objects =
             Arrays.asList(new 麻雀(), new 喜鹊(), new 蝴蝶(), new 飞机(), new 救护车(), new 猫(), new 狗());
 
+    public static void main(String[] args) {
+        会飞的东西飞();
+        会叫的东西叫();
+        动物都能新陈代谢();
+    }
     // 在建造成类型体系后，请尝试化简这个啰嗦的方法，体会多态带来的好处
     public static void 会飞的东西飞() {
         for (Object obj : objects) {
@@ -36,31 +41,19 @@ public class World {
         }
     }
 
-    static class 麻雀 extends 鸟 implements 会飞的东西, 会叫的东西, 动物 {
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
-
+    static class 麻雀 extends 鸟 implements 会叫的东西 {
         public void 叫() {
             System.out.println("叽叽喳喳");
         }
     }
 
-    static class 喜鹊 extends 鸟 implements 会飞的东西, 会叫的东西, 动物 {
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
-
+    static class 喜鹊 extends 鸟 implements 会叫的东西 {
         public void 叫() {
             System.out.println("叽叽喳喳");
         }
     }
 
-    static class 蝴蝶 implements 会飞的东西, 动物 {
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
-
+    static class 蝴蝶 extends 动物 implements 会飞的东西 {
         public void 飞() {
             System.out.println("蝴蝶飞");
         }
@@ -78,28 +71,22 @@ public class World {
         }
     }
 
-    static class 猫 implements 会叫的东西, 动物 {
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
-
+    static class 猫 extends 动物 implements 会叫的东西 {
         public void 叫() {
             System.out.println("喵喵喵");
         }
     }
 
-    static class 狗 implements 会叫的东西, 动物 {
-        public void 新陈代谢() {
-            System.out.println("新陈代谢");
-        }
-
+    static class 狗 extends 动物 implements 会叫的东西 {
         public void 叫() {
             System.out.println("汪汪汪");
         }
     }
 
-    interface 动物 {
-        void 新陈代谢();
+    static class 动物 {
+        public void 新陈代谢() {
+            System.out.println("新陈代谢");
+        }
     }
 
     interface 会飞的东西 {
@@ -110,7 +97,7 @@ public class World {
         void 叫();
     }
 
-    static class 鸟 {
+    static class 鸟 extends 动物 implements 会飞的东西 {
         public void 飞() {
             System.out.println("鸟儿飞");
         }
