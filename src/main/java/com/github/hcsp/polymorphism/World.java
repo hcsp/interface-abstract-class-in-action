@@ -47,7 +47,7 @@ public class World {
         }
     }
 
-    static class 喜鹊 extends 动物 implements 会飞的东西, 会叫的东西  {
+    static class 喜鹊 extends 动物 implements 会飞的东西, 会叫的东西 {
 
         public void 飞() {
             System.out.println("鸟儿飞");
