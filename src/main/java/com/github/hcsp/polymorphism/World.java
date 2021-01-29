@@ -9,12 +9,6 @@ public class World {
     public static List<Object> objects =
             Arrays.asList(new 麻雀(), new 喜鹊(), new 蝴蝶(), new 飞机(), new 救护车(), new 猫(), new 狗());
 
-    public static void main(String[] args) {
-        会飞的东西飞();
-        会叫的东西叫();
-        动物都能新陈代谢();
-    }
-
     // 在建造成类型体系后，请尝试化简这个啰嗦的方法，体会多态带来的好处
     public static void 会飞的东西飞() {
         for (Object obj : objects) {
