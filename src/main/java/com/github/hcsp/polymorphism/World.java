@@ -21,8 +21,8 @@ public class World {
     // 在建造成类型体系后，请尝试化简这个啰嗦的方法，体会多态带来的好处
     public static void 会叫的东西叫() {
         for (Object obj : objects) {
-            if (obj instanceof 会叫的东西) {
-                ((会叫的东西) obj).叫();
+            if (obj instanceof 会飞的东西) {
+                ((会飞的东西) obj).飞();
             }
         }
     }
@@ -48,13 +48,13 @@ public class World {
         }
     }
 
-    static class 蝴蝶 extends 动物 {
+    static class 蝴蝶 extends 动物 implements 会飞的东西{
         public void 飞() {
             System.out.println("蝴蝶飞");
         }
     }
 
-    static class 飞机 {
+    static class 飞机 implements 会飞的东西{
         public void 飞() {
             System.out.println("飞机飞");
         }
