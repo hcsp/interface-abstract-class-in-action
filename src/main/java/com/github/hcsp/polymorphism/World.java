@@ -48,13 +48,13 @@ public class World {
         }
     }
 
-    static class 蝴蝶 extends 动物 implements 会飞的东西{
+    static class 蝴蝶 extends 动物 implements 会飞的东西 {
         public void 飞() {
             System.out.println("蝴蝶飞");
         }
     }
 
-    static class 飞机 implements 会飞的东西{
+    static class 飞机 implements 会飞的东西 {
         public void 飞() {
             System.out.println("飞机飞");
         }
