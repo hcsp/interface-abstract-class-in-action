@@ -50,13 +50,19 @@ public class World {
             System.out.println("新陈代谢");
         }
     }
-    static class Bird extends 动物 implements 会飞的东西{
+    static class Bird extends 动物 implements 会飞的东西,会叫的东西{
         @Override
         public void 飞() {
             System.out.println("鸟儿飞");
         }
+
+        @Override
+        public void 叫() {
+            System.out.println("叽叽喳喳");
+        }
     }
-    static class 麻雀 extends Bird {
+    static class 麻雀 extends Bird{
+
     }
 
     static class 喜鹊 extends Bird {
