@@ -30,16 +30,8 @@ public class World {
     // 在建造成类型体系后，请尝试化简这个啰嗦的方法，体会多态带来的好处
     public static void 动物都能新陈代谢() {
         for (Object obj : objects) {
-            if (obj instanceof 麻雀) {
-                ((麻雀) obj).新陈代谢();
-            } else if (obj instanceof 喜鹊) {
-                ((喜鹊) obj).新陈代谢();
-            } else if (obj instanceof 蝴蝶) {
-                ((蝴蝶) obj).新陈代谢();
-            } else if (obj instanceof 猫) {
-                ((猫) obj).新陈代谢();
-            } else if (obj instanceof 狗) {
-                ((狗) obj).新陈代谢();
+            if (obj instanceof 动物) {
+                ((动物) obj).新陈代谢();
             }
         }
     }
@@ -58,62 +50,19 @@ public class World {
             System.out.println("新陈代谢");
         }
     }
-
-    static class 麻雀 extends 动物 implements 会飞的东西,会叫的东西 {
-//        public void 新陈代谢() {
-//            System.out.println("新陈代谢");
-//        }
-        @Override
-        public void 飞(){
-            System.out.println("鸟儿飞");
-        }
-
-        @Override
-        public void 叫() {
-            System.out.println("叽叽喳喳");
-        }
-
-//
-//        public void 飞() {
-//            System.out.println("鸟儿飞");
-//        }
-//
-//        public void 叫() {
-//            System.out.println("叽叽喳喳");
-//        }
-    }
-
-    static class 喜鹊 extends 动物 implements 会飞的东西, 会叫的东西 {
-
+    static class Bird extends 动物 implements 会飞的东西{
         @Override
         public void 飞() {
             System.out.println("鸟儿飞");
         }
+    }
+    static class 麻雀 extends Bird {
+    }
 
-        @Override
-        public void 叫() {
-            System.out.println("叽叽喳喳");
-        }
-
-//        public void 新陈代谢() {
-//            System.out.println("新陈代谢");
-//        }
-//        public void 飞() {
-//            System.out.println("鸟儿飞");
-//        }
-
-//        public void 叫() {
-//            System.out.println("叽叽喳喳");
-//        }
+    static class 喜鹊 extends Bird {
     }
 
     static class 蝴蝶 extends 动物 implements 会飞的东西 {
-//        public void 新陈代谢() {
-//            System.out.println("新陈代谢");
-//        }
-//        public void 飞() {
-//            System.out.println("蝴蝶飞");
-//        }
         @Override
         public void 飞() {
             System.out.println("蝴蝶飞");
@@ -121,9 +70,6 @@ public class World {
     }
 
     static class 飞机 implements 会飞的东西 {
-//        public void 飞() {
-//            System.out.println("飞机飞");
-//        }
         @Override
         public void 飞() {
             System.out.println("飞机飞");
@@ -135,9 +81,6 @@ public class World {
         public void 叫() {
             System.out.println("哇呜哇呜");
         }
-//        public void 叫() {
-//            System.out.println("哇呜哇呜");
-//        }
     }
 
     static class 猫 extends 动物 implements 会叫的东西 {
@@ -145,16 +88,6 @@ public class World {
         public void 叫() {
             System.out.println("喵喵喵");
         }
-
-//        public void 新陈代谢() {
-//            System.out.println("新陈代谢");
-//        }
-
-
-//        public void 叫() {
-//            System.out.println("喵喵喵");
-//        }
-//    }
     }
 
     static class 狗 extends 动物 implements 会叫的东西 {
@@ -162,13 +95,6 @@ public class World {
         public void 叫(){
             System.out.println("汪汪汪");
         }
-//        public void 新陈代谢() {
-//            System.out.println("新陈代谢");
-//        }
-//
-//        public void 叫() {
-//            System.out.println("汪汪汪");
-//        }
     }
 
 }
