@@ -81,7 +81,7 @@ public class World {
     }
 
     static class 动物 {
-        void 新陈代谢() {
+        public void 新陈代谢() {
             System.out.println("新陈代谢");
         }
     }
@@ -106,4 +106,5 @@ public class World {
     interface 会叫的东西 {
         void 叫();
     }
+
 }
