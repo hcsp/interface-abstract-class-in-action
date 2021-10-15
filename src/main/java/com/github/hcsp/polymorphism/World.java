@@ -16,7 +16,6 @@ public class World {
                 ((会飞的东西) obj).飞();
             }
         }
-
     }
 
 
