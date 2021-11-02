@@ -119,9 +119,9 @@ public class World {
         void 叫();
     }
 
-    public static void main(String[] args) {
-        会飞的东西飞();
-        会叫的东西叫();
-        动物都能新陈代谢();
-    }
+//    public static void main(String[] args) {
+//        会飞的东西飞();
+//        会叫的东西叫();
+//        动物都能新陈代谢();
+//    }
 }
