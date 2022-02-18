@@ -36,28 +36,10 @@ public class World {
         }
     }
 
-    static class 麻雀 extends 动物 implements 会叫的东西, 会飞的东西 {
-        @Override
-        public void 飞() {
-            System.out.println("鸟儿飞");
-        }
-
-        @Override
-        public void 叫() {
-            System.out.println("叽叽喳喳");
-        }
+    static class 麻雀 extends 鸟 {
     }
 
-    static class 喜鹊 extends 动物 implements 会飞的东西, 会叫的东西 {
-        @Override
-        public void 飞() {
-            System.out.println("鸟儿飞");
-        }
-
-        @Override
-        public void 叫() {
-            System.out.println("叽叽喳喳");
-        }
+    static class 喜鹊 extends 鸟 {
     }
 
     static class 蝴蝶 extends 动物 implements 会飞的东西 {
@@ -96,9 +78,22 @@ public class World {
     }
 
     static class 动物 {
-        void 新陈代谢(){
+        void 新陈代谢() {
             System.out.println("新陈代谢");
-        };
+        }
+    }
+
+    static class 鸟 extends 动物 implements 会飞的东西, 会叫的东西 {
+        @Override
+        public void 飞() {
+            System.out.println("鸟儿飞");
+        }
+
+        @Override
+        public void 叫() {
+            System.out.println("叽叽喳喳");
+        }
+
     }
 
     interface 会飞的东西 {
