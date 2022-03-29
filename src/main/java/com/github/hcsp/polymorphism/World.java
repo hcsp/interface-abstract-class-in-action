@@ -29,15 +29,11 @@ public class World {
     }
 
     public static abstract class VirtulBird extends VirtulAnimal implements 会飞的东西 {
-        private String name;
 
-        public VirtulBird(String name) {
-            this.name = name;
-        }
 
         @Override
         public void 飞() {
-            System.out.println(name + "飞");
+            System.out.println("鸟儿飞");
         }
 
         public void 叫() {
@@ -74,15 +70,11 @@ public class World {
 
 
     static class 麻雀 extends VirtulBird implements 会叫的东西 {
-        public 麻雀() {
-            super("麻雀");
-        }
+
     }
 
     static class 喜鹊 extends VirtulBird implements 会叫的东西 {
-        public 喜鹊() {
-            super("喜鹊");
-        }
+
     }
 
     static class 蝴蝶 extends VirtulAnimal implements 会飞的东西 {
