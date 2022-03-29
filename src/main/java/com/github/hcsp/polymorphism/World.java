@@ -85,7 +85,7 @@ public class World {
         }
     }
 
-    static class 蝴蝶 implements 会飞的东西 {
+    static class 蝴蝶 extends VirtulAnimal implements 会飞的东西 {
         @Override
         public void 飞() {
             System.out.println("蝴蝶飞");
