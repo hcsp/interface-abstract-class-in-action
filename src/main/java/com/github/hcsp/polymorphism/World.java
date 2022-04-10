@@ -16,7 +16,6 @@ public class World {
             if (obj instanceof 会飞的东西) {
                 ((会飞的东西) obj).飞();
             }
-
         }
     }
     // 在建造成类型体系后，请尝试化简这个啰嗦的方法，体会多态带来的好处
