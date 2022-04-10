@@ -36,7 +36,7 @@ public class World {
         }
     }
 
-    static class 小动物 {
+    static class 小动物 implements 动物{
         public void 新陈代谢() {
             System.out.println("新陈代谢");
         }
