@@ -25,6 +25,7 @@ public class World {
                 ((会叫的东西) obj).叫();
             }
         }
+
     }
     // 在建造成类型体系后，请尝试化简这个啰嗦的方法，体会多态带来的好处
     public static void 动物都能新陈代谢() {
