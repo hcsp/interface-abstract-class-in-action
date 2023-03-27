@@ -41,7 +41,7 @@ public class World {
 
     }
 
-    static class 蝴蝶 extends 鸟 implements 会飞的东西 {
+    static class 蝴蝶 extends 动物 implements 会飞的东西 {
 
         public void 飞() {
             System.out.println("蝴蝶飞");
@@ -78,7 +78,7 @@ public class World {
             System.out.println("新陈代谢");
         };
     }
-    static class 鸟 extends 动物 {
+    static class 鸟 extends 动物 implements 会飞的东西, 会叫的东西 {
         public void 叫() {
             System.out.println("叽叽喳喳");
         }
