@@ -11,6 +11,8 @@ public class World {
     // 在建造成类型体系后，请尝试化简这个啰嗦的方法，体会多态带来的好处
     public static void main(String[] args) {
         会飞的东西飞();
+        会叫的东西叫();
+        动物都能新陈代谢();
     }
 
     public static void 会飞的东西飞() {
@@ -41,28 +43,11 @@ public class World {
         }
     }
 
-    static class 麻雀 extends 鸟儿 implements 会飞的东西, 会叫的东西{
-        @Override
-        public void 飞() {
-            System.out.println("鸟儿飞");
-        }
-
-        @Override
-        public void 叫() {
-            System.out.println("叽叽喳喳");
-        }
+    static class 麻雀 extends 鸟儿 {
     }
 
-    static class 喜鹊 extends 鸟儿 implements 会飞的东西, 会叫的东西{
-        @Override
-        public void 飞() {
-            System.out.println("鸟儿飞");
-        }
+    static class 喜鹊 extends 鸟儿 {
 
-        @Override
-        public void 叫() {
-            System.out.println("叽叽喳喳");
-        }
     }
 
     static class 蝴蝶 extends 动物 implements 会飞的东西 {
@@ -106,16 +91,17 @@ public class World {
             }
         }
 
-    public static abstract class 鸟儿 implements 会飞的东西 {
-        void 新陈代谢(){
-            System.out.println("新陈代谢");
-        }
+    public static abstract class 鸟儿 extends 动物 implements 会飞的东西,会叫的东西 {
 
         @Override
         public void 飞(){
             System.out.println("鸟儿飞");
         }
 
+        @Override
+        public void 叫(){
+            System.out.println("叽叽喳喳");
+        }
     }
 
     interface 会飞的东西 {
